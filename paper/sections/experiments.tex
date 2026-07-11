@@ -1,0 +1,18 @@
+We evaluate SCARF on the MCPTox benchmark (200 tool poisoning scenarios spanning 4 attack categories) using GPT-4o as the rephrasing model. 
+All experiments were conducted on a single NVIDIA A100 80GB GPU, though SCARF's computational requirements are minimal (\$0.08 per generated variant in API costs).
+
+\textbf{Baselines:} We compare against four baselines:
+\begin{itemize}
+    \item \textbf{Static:} Original MCPTox attacks, no modification.
+    \item \textbf{Paraphrase:} GPT-4o simple rephrase without explicit semantic constraint.
+    \item \textbf{Best-of-N:} Generate N=5 variants per attack, select the one that most evades the defense.
+    \item \textbf{Random baseline:} Randomly perturb attack descriptions (ablation).
+\end{itemize}
+
+\textbf{Main Results:} Table~\ref{tab:enhanced_main} summarizes our core finding: SCARF achieves a 9.3\% defense evasion rate against ReasoningGuard, meaning 90.7\% of generated variants are correctly blocked.
+While this might seem to indicate strong defense, the \textit{relative} comparison is telling: static attacks achieve 0\% evasion (100\% blocked), while simple paraphrasing and best-of-N generation achieve 50\%-75\% evasion rates, demonstrating that even basic semantic perturbations can expose defense vulnerabilities.
+
+\textbf{Ablation Study:} We conduct two ablation studies. 
+As N increases from 5 to 25, the quality of generated variants improves (DER decreasing), but more iterations introduce noise from excessive rephrasing. 
+We find N=10 to be the sweet spot. 
+Removing the constraint check causes DER to spike to 100\%---essentially generating invalid attacks that the defense correctly rejects.

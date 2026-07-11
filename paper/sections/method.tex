@@ -1,0 +1,16 @@
+Let $\mathcal{D} = \{(q_i, a_i, y_i)\}_{i=1}^N$ be a set of MCP attack scenarios, where $q_i$ is a natural language user query, $a_i$ is the expected tool invocation (server, method, parameters), and $y_i \in \{0,1\}$ indicates whether the attack is malicious.
+
+A defense system $f_\theta: (q, a) \rightarrow \{0,1\}$ classifies whether a tool invocation should be blocked ($1$) or allowed ($0$).
+Given an original attack instance $(q, a)$, we seek to generate a \textit{semantically equivalent} variant $(q', a')$ such that:
+\[
+\text{sem}(q', a') = \text{sem}(q, a) \quad \text{and} \quad f_\theta(q', a') = 0
+\]
+while $f_\theta(q, a) = 1$ (i.e., the original attack was blocked, but the variant is incorrectly approved).
+
+SCARF employs semantic constraint random search to generate adversarial variants:
+
+\textbf{Parameterized perturbation:} Given an attack template $t$, apply a perturbation function $\delta(t)$ that modifies the tool description while preserving: (1) the target server, (2) the target method, (3) the target parameters, and (4) the overall attack intent.
+
+\textbf{Constraint checking:} Validate that the perturbed template $t'$ does not violate MCP semantics---i.e., the malicious call remains $\langle \text{fs-server}, \text{files/read}, \text{path=/home/user/.ssh/id\_rsa} \rangle$ regardless of how the description is rewritten.
+
+\textbf{Semantic preservation:} Use GPT-4o as a rephrasing oracle with a specialized prompt that maintains the functional attack while varying surface-level wording.

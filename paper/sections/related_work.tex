@@ -1,0 +1,11 @@
+The MCPTox benchmark~\cite{wang2026mcptox} first demonstrated that tool poisoning attacks achieve high success rates against LLM agents through four attack categories: tool description poisoning, parameter injection, response manipulation, and capability escalation.
+AttestMCP~\cite{maloyan2026breaking} introduced protocol-level capability attestation, reducing overall ASR to 12.4\%.
+
+ReasoningGuard combined AttestMCP with reasoning trace verification (RTV) for dual-layer defense, achieving 5.3\% ASR on MCPTox. 
+However, these evaluations assume \textit{fixed} attack scenarios. Our work is the first to systematically test whether such defenses remain robust against \textit{semantically equivalent but structurally different} attacks generated through constrained search.
+
+Recent work on automated red teaming has primarily focused on \textit{text-based} jailbreaking of LLMs, where attacks try to elicit harmful completions.
+PISmith~\cite{yin2026pismith} used RL-based training to generate prompt injection attacks against LLM detectors.
+AutoRedTeamer proposed lifelong attack integration through multi-round RL.
+
+\textit{None of these approaches target the MCP tool-calling setting}, where attacks must respect tool schemas, method signatures, and parameter constraints while remaining semantically equivalent to original malicious intents.

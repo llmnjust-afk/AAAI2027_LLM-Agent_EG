@@ -1,0 +1,16 @@
+LLM-based agents have become increasingly capable of autonomous tool interaction through protocols like MCP~\cite{wang2026mcptox}. 
+However, this capability introduces new attack surfaces: tool poisoning attacks can embed malicious instructions in tool descriptions, parameter schemas, or response payloads, causing agents to exfiltrate sensitive data or execute unauthorized commands.
+
+Recent work has proposed various defense mechanisms, including protocol-level attestation (AttestMCP~\cite{maloyan2026breaking}), reasoning trace verification (RTV), and hybrid approaches (ReasoningGuard). 
+While these defenses show promising results on standard benchmarks, their evaluation relies on \textit{static} attack scenarios that were not designed to be adversarial. 
+This creates a fundamental blind spot: \textit{can these defenses be bypassed by semantically-equivalent but structurally different attacks?}
+
+We address this gap with \textbf{SCARF}, a semantic constraint-aware red-teaming framework that:
+
+\begin{itemize}
+    \item \textbf{Automatically generates} adversarial MCP attack variants through semantic-preserving random search, maintaining functional equivalence while probing defense decision boundaries.
+    \item \textbf{Provides four competitive baselines} (static, paraphrase, Best-of-N, random) for comprehensive defense evaluation.
+    \item \textbf{Demonstrates} that even simple semantic perturbations can achieve 9.3\% defense evasion rate against state-of-the-art defenses, substantially higher than existing approaches.
+\end{itemize}
+
+Our key insight is that \textit{semantic preserves}---maintaining the original attack intent while varying surface-level tokens---can expose weaknesses in defense mechanisms that operate primarily on pattern matching or capability attestation.

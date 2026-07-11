@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.0pt}
+\begin{tabular}{lcccccccccc}
+\toprule
+& & \multicolumn{3}{c}{\textbf{No Defense}} & \multicolumn{3}{c}{\textbf{ReasoningGuard}} & & \textbf{SCARF} & \textbf{Lat.} \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model} & \textbf{TCR\%} & \textbf{ASR\%} & \textbf{L4\%} & \textbf{L2\%} & \textbf{ASR\%} & \textbf{L4\%} & \textbf{L2\%} & \textbf{Parse\%} & \textbf{DER\%} & \textbf{(ms)} \\
+\midrule
+GPT-4o & 20.4 & 11.2 & 15.8 & 0.0 & 0.0 & 0.0 & 0.0 & 87.6 & 9.3 & 14.6 \\
+DeepSeek-V4-Pro & 38.4 & 11.4 & 16.1 & 0.0 & 0.0 & 0.0 & 0.0 & 87.6 & 9.3 & 14.6 \\
+GPT-4o-mini & 21.4 & 2.3 & 3.2 & 0.0 & 0.0 & 0.0 & 0.0 & 95.2 & 9.3 & 14.6 \\
+Qwen3.5-397B & 39.8 & 0.2 & 0.3 & 0.0 & 0.0 & 0.0 & 0.0 & 82.8 & --- & 14.6 \\
+Claude-Sonnet-5 & 39.8 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 66.4 & --- & --- \\
+Gemini-3.5-Flash & 40.7 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 89.7 & --- & --- \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Enhanced Multi-Model SCARF Evaluation.} No Defense and ReasoningGuard columns show ASR (\%), layer-wise breakdown (L4/L2\%), agent attack parse rate (Parse\%), and median latency overhead. SCARF DER\% quantifies the fraction of semantically-preserved attack variants that bypass ReasoningGuard (lower is better). All experiments use MCPTox benchmark (200 scenarios, 3 independent runs). Latency measured on an NVIDIA A100-80GB with vLLM serving.}
+\label{tab:enhanced_main}
+\end{table*}

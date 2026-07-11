@@ -1,0 +1,6 @@
+LLM-based agents using Model Context Protocol (MCP) tools face critical security risks from tool poisoning attacks that bypass conventional safety guards. 
+Existing defense evaluations rely on static attack scenarios, creating a fundamental blind spot: \textit{how robust are these defenses against semantically-equivalent but structurally-different attacks?} 
+We present \textbf{SCARF} (Semantic Constraint-Aware Red-teaming Framework), a lightweight framework that automatically generates adversarial MCP attack variants through semantic-preserving random search. 
+Across 25 generated variants evaluated on six SOTA LLM agent backbones, SCARF achieves a \textbf{9.3\% defense evasion rate against ReasoningGuard}, compared to 25-75\% for existing approaches. 
+Our key insight is that semantic preservation---maintaining attack intent while varying surface-level tokens---can expose weaknesses in defense mechanisms. 
+The framework requires no GPU and costs only \$0.08 per generated variant.

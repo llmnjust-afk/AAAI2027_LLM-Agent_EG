@@ -1,0 +1,8 @@
+We presented SCARF, a semantic constraint-aware red-teaming framework for systematically evaluating MCP agent defenses against adaptive tool poisoning attacks.
+Through 25 iterations of semantic-preserving random search, SCARF generates adversarial variants that challenge the generalization capability of state-of-the-art defenses.
+
+Our key finding is that while ReasoningGuard correctly blocks 90.7\% of SCARF-generated variants, the 9.3\% that evade represent a meaningful vulnerability that static-only evaluation would miss.
+The framework is designed to be lightweight, reusable, and extendable---each generated variant costs only \$0.08 in API credits.
+
+Future work includes extending SCARF to multi-defender settings, using it for adversarial training of defense models, and deploying it against production MCP-based agent systems to measure practical risk.
+We hope SCARF serves as a building block for more rigorous and adversarial evaluation of MCP agent security.
