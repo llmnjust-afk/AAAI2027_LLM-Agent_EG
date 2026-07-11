@@ -1,0 +1,67 @@
+{
+  "models": [
+    "GPT-4o",
+    "DeepSeek-V4-Pro",
+    "GPT-4o-mini",
+    "Qwen3.5-397B",
+    "Claude-Sonnet-5",
+    "Gemini-3.5-Flash"
+  ],
+  "no_defense": {
+    "GPT-4o": {
+      "asr": 11.2,
+      "tcr": 20.4
+    },
+    "DeepSeek-V4-Pro": {
+      "asr": 11.4,
+      "tcr": 38.4
+    },
+    "GPT-4o-mini": {
+      "asr": 2.3,
+      "tcr": 21.4
+    },
+    "Qwen3.5-397B": {
+      "asr": 0.2,
+      "tcr": 39.8
+    },
+    "Claude-Sonnet-5": {
+      "asr": 0.0,
+      "tcr": 39.8
+    },
+    "Gemini-3.5-Flash": {
+      "asr": 0.0,
+      "tcr": 40.7
+    }
+  },
+  "ptg_only": {
+    "GPT-4o": {
+      "asr": 0.0,
+      "tcr": 20.4
+    },
+    "DeepSeek-V4-Pro": {
+      "asr": 0.0,
+      "tcr": 38.4
+    },
+    "GPT-4o-mini": {
+      "asr": 0.0,
+      "tcr": 21.4
+    },
+    "Qwen3.5-397B": {
+      "asr": 0.0,
+      "tcr": 39.8
+    },
+    "Claude-Sonnet-5": {
+      "asr": 0.0,
+      "tcr": 39.8
+    },
+    "Gemini-3.5-Flash": {
+      "asr": 0.0,
+      "tcr": 40.7
+    }
+  },
+  "scarf_data": {
+    "total_attacks": 75,
+    "blocked": 68,
+    "der": 9.3
+  }
+}
