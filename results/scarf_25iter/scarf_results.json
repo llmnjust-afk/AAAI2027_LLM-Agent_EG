@@ -1,0 +1,21 @@
+{
+  "generated_variants": 25,
+  "per_method_metrics": {
+    "static": {
+      "total": 0,
+      "blocked": 0
+    },
+    "paraphrase": {
+      "total": 0,
+      "blocked": 0
+    },
+    "best_of_n": {
+      "total": 0,
+      "blocked": 0
+    },
+    "scarf": {
+      "total": 75,
+      "blocked": 68
+    }
+  }
+}
